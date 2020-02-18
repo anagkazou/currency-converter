@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: linear-gradient(to right, #000000, #131313, #222222);
+  font-size: 20px;
+  color: white;
+  height: 100vh;
+}
+
+body {
+  height: 100vh;
+  padding: 5%;
+}
+h1 {
+  line-height: 10rem;
+  font-size: 220%;
+}
+.container {
+  margin-top: 6%;
+}
+
+.row {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.hero-text {
+  display: inline-block;
+  height: 100%;
+}
+
+.card {
+  background: white;
+  float: right;
+  height: 100%;
+  width: 50%;
+  vertical-align: middle;
+  border-radius: 3%;
+}
