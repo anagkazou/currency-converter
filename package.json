@@ -1,0 +1,26 @@
+{
+  "name": "currencyconverter",
+  "version": "1.0.0",
+  "description": "A Simple VanillaJs Currency COnverter app",
+  "main": "app.js",
+  "dependencies": {
+    "fixer-api": "^2.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavidOmole/CurrencyConverter.git"
+  },
+  "keywords": [
+    "[]"
+  ],
+  "author": "David.Omole",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DavidOmole/CurrencyConverter/issues"
+  },
+  "homepage": "https://github.com/DavidOmole/CurrencyConverter#readme"
+}
