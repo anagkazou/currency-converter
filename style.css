@@ -97,6 +97,7 @@ select {
   vertical-align: middle;
   border-radius: 3%;
   margin: 0 auto;
+  box-shadow: 0 18px 18px -6px black;
 }
 
 .check-sign {
