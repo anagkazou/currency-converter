@@ -1,12 +1,12 @@
 var myData = [
   {
-    symbol: "$",
-    name: "US Dollar",
-    symbol_native: "$",
+    symbol: "€",
+    name: "Euro",
+    symbol_native: "€",
     decimal_digits: 2,
     rounding: 0,
-    code: "USD",
-    name_plural: "US dollars"
+    code: "EUR",
+    name_plural: "euros"
   },
   {
     symbol: "CA$",
@@ -18,13 +18,13 @@ var myData = [
     name_plural: "Canadian dollars"
   },
   {
-    symbol: "€",
-    name: "Euro",
-    symbol_native: "€",
+    symbol: "$",
+    name: "US Dollar",
+    symbol_native: "$",
     decimal_digits: 2,
     rounding: 0,
-    code: "EUR",
-    name_plural: "euros"
+    code: "USD",
+    name_plural: "US dollars"
   },
   {
     symbol: "AED",
