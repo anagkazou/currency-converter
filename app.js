@@ -5,7 +5,6 @@ let dropdown1 = document.getElementById("convert-from");
 let dropdown2 = document.getElementById("convert-to");
 let amount = document.getElementById("amount");
 let convertButton = document.getElementById("convert-button")
-
 //  "https://api.exchangeratesapi.io/latest?base=USD ";
 //"http://data.fixer.io/api/latest?access_key=5b2d17c9e871b87d91f00c86244fc91d";
 
@@ -33,30 +32,40 @@ var UIController = (() => {
     initialValue: document.getElementById("initial-amount"),
     initialCurrency:document.getElementById('initial-currency'),
     finalValue: document.getElementById('final-amount'),
-    finalCurrency: document.getElementById('final-currency') 
+    finalCurrency: document.getElementById('final-currency'), 
+    summary : document.getElementById("summary")
     }
     let dataCntrl = dataController;
 
   return{
+    getAmount:function(){
+      return amount.value;
+      },
      getBaseValue: ()=>{
       return dropdown1.value;
     },
 
-    getBaseCurrency: ()=>{
+    getBaseCurrency:  function(){
+      if(Number(this.getAmount())>1){
+        return dropdown1.options[dropdown1.selectedIndex].text + "s"
+      }else{
       return dropdown1.options[dropdown1.selectedIndex].text;
-    },
+    }},
     
     getTargetValue: ()=>{
       return dropdown2.value;
     },
 
-    getFinalCurrency: ()=>{
-      return dropdown2.options[dropdown2.selectedIndex].text;
-    },
     
-     getAmount: ()=>{
-    return amount.value;
-    },
+
+    getFinalCurrency: function(){
+      if(Number(dataController.data.finalValue)>1){
+        return dropdown2.options[dropdown2.selectedIndex].text + "s"
+      }else{
+      return dropdown2.options[dropdown2.selectedIndex].text;
+    }},
+    
+     
 
      findCurrencySymbol: (data)=>{
       for (let i = 0; i < myData.length; i++) {
@@ -71,6 +80,7 @@ var UIController = (() => {
       output.initialCurrency.textContent = this.getBaseCurrency();
       output.finalValue.textContent = this.findCurrencySymbol(this.getTargetValue()) + " " +  dataController.data.finalValue;
       output.finalCurrency.textContent= this.getFinalCurrency();
+    output.summary.textContent = dataController.data.initialValue + " " + this.getBaseCurrency() + " = " +  dataController.data.finalValue + " " + this.getFinalCurrency()
     }
   }
 })(dataController);
@@ -81,10 +91,10 @@ var controller = (function() {
   //var baseValue = dropdown1.value;
 //console.log(baseValue);
 
-    let uiCntrl = UIController;
 
 
-  
+    let uiCntrl = UIController;            
+        
 
   function convert(){
     var fixer =
@@ -101,11 +111,7 @@ var controller = (function() {
         response.json().then(function (apiData){
           let conversionRates = apiData.conversion_rates;
           let amount =uiCntrl.getAmount();
-         console.log();
-         
-         
-                 
-        
+           
         dataCntrl.data.initialValue=Number(amount).toFixed(2);
         dataCntrl.data.finalValue = Number(amount * conversionRates[uiCntrl.getTargetValue()]).toFixed(2);
          uiCntrl.displayResult();
