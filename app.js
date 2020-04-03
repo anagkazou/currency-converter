@@ -80,7 +80,7 @@ var UIController = (() => {
       output.initialCurrency.textContent = this.getBaseCurrency();
       output.finalValue.textContent = this.findCurrencySymbol(this.getTargetValue()) + " " +  dataController.data.finalValue;
       output.finalCurrency.textContent= this.getFinalCurrency();
-    output.summary.textContent = dataController.data.initialValue + " " + this.getBaseCurrency() + " = " +  dataController.data.finalValue + " " + this.getFinalCurrency()
+    output.summary.textContent = dataController.data.initialValue + "(" + this.findCurrencySymbol(this.getBaseCurrency()) + ") = " +  dataController.data.finalValue + "(" + this.findCurrencySymbol(this.getFinalCurrency()) + ")"
     }
   }
 })(dataController);
