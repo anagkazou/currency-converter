@@ -33,7 +33,9 @@ var UIController = (() => {
     initialCurrency:document.getElementById('initial-currency'),
     finalValue: document.getElementById('final-amount'),
     finalCurrency: document.getElementById('final-currency'), 
-    summary : document.getElementById("summary")
+    summary : document.getElementById("summary"),
+    checkSign: document.getElementById("check-sign")
+
     }
     let dataCntrl = dataController;
 
@@ -80,8 +82,10 @@ var UIController = (() => {
       output.initialCurrency.textContent = this.getBaseCurrency();
       output.finalValue.textContent = this.findCurrencySymbol(this.getTargetValue()) + " " +  dataController.data.finalValue;
       output.finalCurrency.textContent= this.getFinalCurrency();
-    output.summary.textContent = dataController.data.initialValue + "(" + this.findCurrencySymbol(this.getBaseCurrency()) + ") = " +  dataController.data.finalValue + "(" + this.findCurrencySymbol(this.getFinalCurrency()) + ")"
-    }
+    output.summary.textContent = dataController.data.initialValue + " (" + this.findCurrencySymbol(this.getTargetValue()) + ") = " +  dataController.data.finalValue + " (" + this.findCurrencySymbol(this.getBaseValue()) + ")";
+    output.checkSign.style.visibility = "visible";
+
+  }
   }
 })(dataController);
 

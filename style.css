@@ -35,9 +35,11 @@ input {
   border-left: 7px solid white;
   border-right: 7px solid white;
 }
-input::after,
-input:focus {
-  background: white;
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
 select {
   width: 100%;
@@ -99,7 +101,7 @@ select {
 .card {
   background: linear-gradient(135deg, #dd5f2e, #de2e54);
   height: 450px;
-  width: 730px;
+  width: 725px;
   vertical-align: middle;
   border-radius: 3%;
   margin: 0 auto;
@@ -107,6 +109,7 @@ select {
 }
 
 .check-sign {
+  visibility: hidden;
   position: relative;
   width: 100px;
   height: 100px;
