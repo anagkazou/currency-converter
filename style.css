@@ -23,13 +23,13 @@ h1 {
 }
 .title {
   color: white;
-  margin-bottom: 18%;
+  margin-bottom: 12%;
   font-size: 80%;
 }
 
 input {
-  width: 100%;
-  line-height: 2.6em;
+  width: 75%;
+  line-height: 2.5em;
   border-radius: 35px;
   border: none;
   border-left: 7px solid white;
@@ -42,7 +42,7 @@ input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
 select {
-  width: 100%;
+  width: 75%;
   height: 2.5em;
   border: 7px white solid;
   border-radius: 35px;
@@ -58,26 +58,30 @@ select {
 .right-container {
   display: inline-block;
   background: #141414;
-  width: 40%;
+  width: 30%;
   height: 100%;
   border-top-right-radius: 3%;
   border-bottom-right-radius: 3%;
-  padding-right: 8%;
+  padding-right: 7%;
   color: gray;
+  /* margin-top: 25px; */
 }
 
 .right-container p {
-  font-weight: 50;
   font-size: 60%;
 }
 
 .left-container {
-  width: 60%;
+  width: 70%;
   height: 100%;
-  padding: 4% 8%;
+  background: linear-gradient(135deg, #dd5f2e, #de2e54);
+  padding: 4% 7% 7% 7%;
+  clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 .input-container {
-  margin-bottom: 5%;
+  margin-bottom: 3%;
 }
 
 .input-container p {
@@ -87,7 +91,7 @@ select {
 
 .convert-button {
   background: #141414;
-  width: 100%;
+  width: 75%;
   display: block;
   font-size: 80%;
   line-height: 2em;
@@ -99,24 +103,25 @@ select {
 }
 
 .card {
-  background: linear-gradient(135deg, #dd5f2e, #de2e54);
+  background: #141414;
   height: 450px;
-  width: 725px;
+  width: 680px;
   vertical-align: middle;
-  border-radius: 3%;
+  border-radius: 10px;
   margin: 0 auto;
   box-shadow: 0 18px 18px -6px black;
 }
 
 .check-sign {
+  background: linear-gradient(135deg, #de2e54, #dd5f2e);
+
   visibility: hidden;
   position: relative;
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  margin: 25% auto;
+  margin: 40% auto;
   margin-right: 0;
-  background: linear-gradient(135deg, #de2e54, #dd5f2e);
 }
 .white-circle {
   position: absolute;
