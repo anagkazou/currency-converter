@@ -3,12 +3,9 @@ let dropdown1 = document.getElementById("convert-from");
 let dropdown2 = document.getElementById("convert-to");
 let amount = document.getElementById("amount");
 let convertButton = document.getElementById("convert-button");
-//  "https://api.exchangeratesapi.io/latest?base=USD ";
-//"http://data.fixer.io/api/latest?access_key=5b2d17c9e871b87d91f00c86244fc91d";
 
 var UIController = (() => {
-  //Populate DropDown menus
-
+  //Populate <select/> dropdown options
   (function populateSelectTag() {
     let option;
 
@@ -36,6 +33,8 @@ var UIController = (() => {
   let dataCntrl = dataController;
 
   return {
+    //These are returned to make them accessible
+    // to the other modules of the app.
     getAmount: function () {
       return amount.value;
     },
@@ -71,6 +70,7 @@ var UIController = (() => {
       }
     },
 
+    //Display output to the screen
     displayResult: function () {
       output.initialValue.textContent =
         this.findCurrencySymbol(this.getBaseValue()) +
@@ -96,30 +96,19 @@ var UIController = (() => {
   };
 })(dataController);
 
-var controller = (function () {
-  //var baseValue = dropdown1.value;
-  //console.log(baseValue);
-
+var appController = (function () {
   let uiCntrl = UIController;
 
   function convert() {
     var fixer =
       "https://prime.exchangerate-api.com/v5/5bdbc7c39658f1b8d871e4e8/latest/" +
       uiCntrl.getBaseValue();
-    console.log(fixer);
+
+    //Fetch API data
     fetch(fixer).then(function (response) {
-      // targetCurrency = getTargetValue();
       let dataCntrl = dataController;
-      if (response.status !== 200) {
-        console.warn(
-          "Looks like there was a problem. Status Code: " + response.status
-        );
-        return;
-      }
 
       response.json().then(function (apiData) {
-        console.log(apiData);
-
         let conversionRates = apiData.conversion_rates;
         let amount = uiCntrl.getAmount();
 
@@ -134,6 +123,7 @@ var controller = (function () {
   convertButton.addEventListener("click", convert);
 })(dataController, UIController);
 
+//Holds Data
 var dataController = (function (dataCtrl) {
   return {
     data: {
@@ -143,5 +133,4 @@ var dataController = (function (dataCtrl) {
       finalCurrency: "",
     },
   };
-  console.log(data);
 })(UIController);

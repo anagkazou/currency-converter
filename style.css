@@ -21,6 +21,7 @@ h1 {
   font-size: 150%;
   font-weight: 50;
 }
+
 .title {
   color: white;
   margin-bottom: 12%;
@@ -35,30 +36,35 @@ input {
   border-left: 7px solid white;
   border-right: 7px solid white;
 }
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
+
 select {
   width: 75%;
   height: 2.5em;
   border: 7px white solid;
   border-radius: 35px;
 }
+
 .container {
   margin-top: 6%;
 }
+
 .left-container,
 .right-container {
   position: relative;
   float: left;
 }
+
 .right-container {
   display: inline-block;
   background: #141414;
-  width: 30%;
+  width: 35%;
   height: 100%;
   border-top-right-radius: 3%;
   border-bottom-right-radius: 3%;
@@ -72,7 +78,7 @@ select {
 }
 
 .left-container {
-  width: 70%;
+  width: 65%;
   height: 100%;
   background: linear-gradient(135deg, #dd5f2e, #de2e54);
   padding: 4% 7% 7% 7%;
@@ -80,6 +86,7 @@ select {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
+
 .input-container {
   margin-bottom: 3%;
 }
@@ -120,9 +127,10 @@ select {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  margin: 40% auto;
+  margin: 33% auto;
   margin-right: 0;
 }
+
 .white-circle {
   position: absolute;
   width: 45%;
@@ -133,6 +141,7 @@ select {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 img {
   height: 50%;
   width: 50%;
@@ -157,9 +166,11 @@ img {
   from {
     transform: translate(0, 0px);
   }
+
   65% {
     transform: translate(0, 6px);
   }
+
   to {
     transform: translate(0, -0px);
   }
