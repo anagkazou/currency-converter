@@ -121,10 +121,10 @@ var appController = (function () {
     });
   }
   convertButton.addEventListener("click", convert);
-})(dataController, UIController);
+})();
 
 //Holds Data
-var dataController = (function (dataCtrl) {
+var dataController = (function () {
   return {
     data: {
       initialValue: 0,
@@ -133,4 +133,4 @@ var dataController = (function (dataCtrl) {
       finalCurrency: "",
     },
   };
-})(UIController);
+})();
