@@ -194,3 +194,39 @@ img {
 .conversion-summary {
   color: #dd5f2e;
 }
+
+@media only screen and (max-width: 991px) {
+  /* small phones to small tablets: from 0 to 481px  tp 767px */
+
+  body {
+    padding: 0;
+    position: relative;
+  }
+  .card {
+    width: 96vw;
+    height: 50vh;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  h1 {
+    font-size: 80%;
+    font-weight: 50;
+  }
+
+  .check-sign {
+    width: 60px;
+    height: 60px;
+  }
+
+  .left-container {
+    width: 60%;
+  }
+
+  .right-container {
+    width: 40%;
+  }
+}
